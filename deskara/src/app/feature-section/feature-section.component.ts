@@ -57,9 +57,8 @@ export class FeatureSectionComponent implements OnInit {
     if (this.contactForm.invalid) {
         return;
     } else {
-      alert("Form Submitted"); 
+      alert("Form Submitted: " + this.contactForm.value); 
       console.log(this.contactForm.value)
-      this.contactForm.reset();
     }
 
   }
