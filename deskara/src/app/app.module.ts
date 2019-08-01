@@ -4,8 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { AppComponent } from './app.component'; 
 import { FeatureSectionComponent } from './feature-section/feature-section.component';
 import { TestimonialSectionComponent } from './testimonial-section/testimonial-section.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
@@ -14,8 +13,7 @@ import { CountriesService } from "./shared/services/countries.service";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeroSectionComponent,
+    AppComponent, 
     FeatureSectionComponent,
     TestimonialSectionComponent,
     FooterSectionComponent,

@@ -1111,6 +1111,12 @@ h1, h2, h3, h4, h5, h6 {
 .block-25 ul li a:hover .text .heading {
   color: #fff; }
 
+  .w-35 {
+    width: 35% !important;
+  }
+  .w-60 {
+    width: 60% !important;
+  }
 /* Custom Style */
 .site-hero {
     background: url('./assets/images/hero_bg_1.jpg');
@@ -1141,6 +1147,10 @@ h1, h2, h3, h4, h5, h6 {
             color:#fff;
             background: transparent;
             font-weight: 200;
+        }
+        select {
+          background:transparent;
+          color:#fff
         }
     }
 }
