@@ -1,63 +1,140 @@
 <div class="site-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="col-lg-6 mb-1 mb-lg-0">
           <div class="img-border">
-            <img src="../../assets/images/about_1.png" alt="Image" class="img-fluid">
+            <img src="{{countriesData?.flag}}" alt="Image" class="img-fluid">
           </div>
         </div>
-        <div class="col-lg-5 ml-auto">
-          <span class="sub-title">Why Us</span>
-          <h2 class="font-weight-bold text-black mb-5">Why Us</h2>
+        <div class="col-lg-6 ml-auto">
+          <h2 class="font-weight-bold text-black">{{countriesData?.name}}</h2> 
+          <span class="sub-title mb-3">{{countriesData?.capital}}</span>
           <div class="accordion" id="accordionExample">
             
             <h2 class="mb-0 border rounded mb-2">
               <button class="btn " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                1. What Should I Do If My Interior Broken?
+                1. Country Information
               </button>
             </h2>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, <a href="#">Cnsectetur adipisicing</a> elit. Eos quos incidunt, perspiciatis, ad saepe, magnam error adipisci vitae ut provident alias! Odio debitis error ipsum molestiae voluptas accusantium quibusdam animi, soluta explicabo asperiores aliquid, modi natus suscipit deleniti. Corrupti, autem.</p>
+                <div class="row">
+                  <div class="table-responsive col-md-6 pl-0">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr> 
+                          <td><strong>Name</strong></td>
+                          <td>{{countriesData?.name}}</td> 
+                        </tr>
+                        <tr> 
+                          <td><strong>Capital</strong></td>
+                          <td>{{countriesData?.capital}}</td> 
+                        </tr>
+                        <tr> 
+                          <td><strong>Code</strong></td>
+                          <td>{{countriesData?.alpha2Code}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                    <div class="table-responsive col-md-6 pr-0">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr> 
+                            <td><strong>Population</strong></td>
+                            <td>{{countriesData?.population}}</td>
+                          </tr>
+                          <tr> 
+                            <td><strong>Area</strong></td>
+                            <td>{{countriesData?.area}}</td>
+                          </tr>
+                          <tr> 
+                            <td><strong>Timezone</strong></td>
+                            <td>{{countriesData?.timezones}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
               </div>
             </div>
           
             <h2 class="mb-0 border rounded mb-2">
               <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                2. What Is Your Location?
+                2. Region Information
               </button>
             </h2>
            
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
               <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat voluptate animi hic quasi sequi odio, vitae dolorum soluta sapiente debitis ad similique tempore, aliquam quae nam deserunt dicta ullam perspiciatis minima, quam. Quis repellat corporis aperiam, veritatis nemo iure inventore.</p>
+                <div class="row">
+                  <div class="table-responsive col-md-12 px-0">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr> 
+                          <td><strong>Region</strong></td>
+                          <td>{{countriesData?.region}}</td> 
+                        </tr>
+                        <tr> 
+                          <td><strong>Sub-region</strong></td>
+                          <td>{{countriesData?.subregion}}</td> 
+                        </tr> 
+                        <tr> 
+                          <td><strong>Name</strong></td>
+                          <td>{{countriesData?.regionalBlocs[0].name}}</td>
+                        </tr>
+                        <tr> 
+                          <td><strong>Acronym</strong></td>
+                          <td>{{countriesData?.regionalBlocs[0].acronym}}</td>
+                        </tr> 
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
               </div>
             </div>
          
             <h2 class="mb-0 border rounded mb-2">
               <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                3. Robus Building
+                3. Others
               </button>
             </h2>
             
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
               <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et dolorum libero consequuntur facere molestias beatae quod labore quidem ad quasi eius pariatur quae nam quo soluta optio dicta, doloribus ullam fugit nulla! Itaque necessitatibus eum sed quam eos id!</p>
+                <div class="row">
+                  <div class="table-responsive col-md-12 px-0">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr> 
+                          <td><strong>Languages</strong></td>
+                          <td>
+                            <span *ngFor="let lang of countriesData?.languages">{{lang.name}}</span>
+                          </td> 
+                        </tr>
+                        <tr> 
+                          <td><strong>Calling code</strong></td>
+                          <td>
+                            <span *ngFor="let calling of countriesData?.callingCodes">{{calling}}</span> 
+                          </td>
+                        </tr> 
+                        <tr> 
+                          <td><strong>Demonym</strong></td>
+                          <td>{{countriesData?.demonym}}</td>
+                        </tr>
+                        <tr> 
+                          <td><strong>Currency</strong></td>
+                          <td>
+                              <span *ngFor="let currency of countriesData?.currencies">{{currency.code}}</span>
+                            </td>
+                        </tr> 
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
               </div>
             </div>
-
-            <h2 class="mb-0 border rounded mb-2">
-              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                4. What Is Your Main Services?
-              </button>
-            </h2>
-
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-              <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quos incidunt, perspiciatis, ad saepe, magnam error adipisci vitae ut provident alias! Odio debitis error ipsum molestiae voluptas accusantium quibusdam animi, soluta explicabo asperiores aliquid, modi natus suscipit deleniti. Corrupti, autem.</p>
-              </div>
-            </div> 
           </div> 
         </div>
       </div>

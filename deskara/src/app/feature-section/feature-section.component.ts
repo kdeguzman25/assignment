@@ -26,6 +26,7 @@ export class FeatureSectionComponent implements OnInit {
     this.countries.detectCountry().subscribe(res => { 
       this.countries.getCountry(res['countryCode']).subscribe(resCountry => { 
         console.log(resCountry)
+        this.countriesData = resCountry;
       });
     });
   } 

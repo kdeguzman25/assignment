@@ -27,6 +27,7 @@ export class HeroSectionComponent implements OnInit {
     // Initialized reactive form
     this.contactForm = this.formBuilder.group({
         organization: ['', Validators.required],
+        name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         phone:  ['', Validators.required]
     })
