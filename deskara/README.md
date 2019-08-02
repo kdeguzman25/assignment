@@ -34,8 +34,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Notes
-1. Country is auto detect based on client's IP address using `Geolocation API` http://ip-api.com/json.
-2. Passed the country code of the client IP using this endpoint `https://restcountries.eu/rest/v2/alpha/{code}` to get all the information of the Country.
-3. Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
+1 - Country is auto detect based on client's IP address using `Geolocation API` http://ip-api.com/json.
+2 - Passed the country code of the client IP using this endpoint `https://restcountries.eu/rest/v2/alpha/{code}` to get all the information of the Country.
+3 - Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
 
  
