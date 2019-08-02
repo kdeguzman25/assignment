@@ -38,3 +38,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Passed the country code of the client IP using this endpoint `https://restcountries.eu/rest/v2/alpha/{code}` to get all the information of the Country.
 3. Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
 
+ 
