@@ -15,6 +15,8 @@ export class FeatureSectionComponent implements OnInit {
   contactForm: FormGroup;
   submitted = false;
   defaultCallingCode = false;
+  namePattern = '^[a-zA-Z0-9 ]+$';
+  phonePattern = '^[0-9]+$';
 
   constructor(
     private countries: CountriesService,
@@ -26,11 +28,26 @@ export class FeatureSectionComponent implements OnInit {
       this.initializeDetectCountry()
       // Initialized reactive form
       this.contactForm = this.formBuilder.group({
-          organization: ['', Validators.required],
-          name: ['', Validators.required],
+          organization: ['', 
+            [
+              Validators.required,
+              Validators.pattern(this.namePattern),
+            ]
+          ],
+          name: ['', 
+            [
+              Validators.required,
+              Validators.pattern(this.namePattern),
+            ]
+          ],
           email: ['', [Validators.required, Validators.email]], 
-          countryCode: new FormControl(''),
-          phone:  ['', Validators.required]
+          countryCode: ['', Validators.required],
+          phone:  ['',
+           [
+             Validators.required,
+             Validators.pattern(this.phonePattern),
+            ]
+          ]
       })
   }
 

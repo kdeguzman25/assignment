@@ -24,6 +24,7 @@
                     <input type="text" formControlName="organization" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.organization.errors }" />
                     <div *ngIf="submitted && f.organization.errors" class="invalid-feedback">
                         <div *ngIf="f.organization.errors.required">Organization Name is required</div>
+                        <div *ngIf="f.organization.errors.pattern">Organization Name must contain only numbers and letters</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,6 +32,7 @@
                   <input type="name" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                   <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                       <div *ngIf="f.name.errors.required">Name is required</div> 
+                      <div *ngIf="f.name.errors.pattern">Name must contain only numbers and letters</div>
                   </div>
               </div>
                 <div class="form-group">
@@ -50,6 +52,7 @@
                     <input type="tel" formControlName="phone" class="form-control w-60 ml-3 d-inline-block" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
                     <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                         <div *ngIf="f.phone.errors.required">Phone is required</div>
+                        <div *ngIf="f.phone.errors.pattern">Mobile must contain only numbers</div>
                     </div>
                 </div>
                 <div class="form-group">
