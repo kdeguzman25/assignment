@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'; 
 import { CountriesService } from "../shared/services/countries.service";
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-feature-section',
@@ -8,12 +8,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./feature-section.component.scss']
 })
 export class FeatureSectionComponent implements OnInit {
-
+  nrSelect;
   countriesData: any
   regionData: any
   @Output() regionName = new EventEmitter();
   contactForm: FormGroup;
   submitted = false;
+  defaultCallingCode = false;
 
   constructor(
     private countries: CountriesService,
@@ -27,8 +28,8 @@ export class FeatureSectionComponent implements OnInit {
       this.contactForm = this.formBuilder.group({
           organization: ['', Validators.required],
           name: ['', Validators.required],
-          email: ['', [Validators.required, Validators.email]],
-          countryCode:  [Validators.required],
+          email: ['', [Validators.required, Validators.email]], 
+          countryCode: new FormControl(''),
           phone:  ['', Validators.required]
       })
   }
@@ -44,7 +45,8 @@ export class FeatureSectionComponent implements OnInit {
       this.countries.getCountry(res['countryCode']).subscribe(resCountry => {  
         this.countriesData = resCountry; 
         this.countries.getRegions(resCountry['region']).subscribe(resRegion => {  
-          this.regionData = resRegion
+          this.regionData = resRegion 
+          this.nrSelect = this.countriesData['callingCodes'][0];
         }); 
       });
     });
@@ -57,7 +59,7 @@ export class FeatureSectionComponent implements OnInit {
     if (this.contactForm.invalid) {
         return;
     } else {
-      alert("Form Submitted: " + this.contactForm.value); 
+      alert("Form Submitted: " + JSON.stringify(this.contactForm.value)); 
       console.log(this.contactForm.value)
     }
 

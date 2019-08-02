@@ -42,10 +42,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="d-block">Phone</label>
-
-                  <select name="countryCode" formControlName="countryCode" class="form-control w-35 d-inline-block">
-                      <option *ngFor="let country of regionData">{{country.name}} +{{country.callingCodes[0]}}</option> 
+                  
+                    <label class="d-block">Phone</label> 
+                  <select name="countryCode" formControlName="countryCode" class="form-control w-35 d-inline-block" [(ngModel)]='nrSelect'>
+                      <option *ngFor="let country of regionData; let i=index" value="{{country.callingCodes[0]}}">{{country.name}} +{{country.callingCodes[0]}}</option>  
                   </select>
                     <input type="tel" formControlName="phone" class="form-control w-60 ml-3 d-inline-block" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
                     <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
