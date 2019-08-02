@@ -12,4 +12,12 @@ export class FooterSectionComponent implements OnInit {
   ngOnInit() {
   }
 
+  scroll(id: string): void {
+    const el: HTMLElement|null = document.getElementById(id);
+    if (el) {
+      setTimeout(() =>
+        el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    } 
+  }
+
 }

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
 
 /* Default style for template */
 body {
@@ -1153,4 +1154,14 @@ h1, h2, h3, h4, h5, h6 {
           color:#fff
         }
     }
+}
+.contact-us,
+.signup {
+  color:#fff !important;
+}
+.signup {
+  cursor: pointer; 
+}
+.signup:hover {
+  color:#ff5733 !important;
 }
