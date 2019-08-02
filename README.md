@@ -16,7 +16,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng serve --open --host your_ip_here` # compiles and run the solution on your localhost using your ip
+
 Run `ng build --prod` # complies production scripts and files to dist folder
+
 Run `ng build --prod --base-href '/your_directory/'` #complies production scripts and files to dist folder so you can upload it to a custom directory
 
 The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
@@ -35,7 +37,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Notes
 1. Country is auto detect based on client's IP address using `Geolocation API` http://ip-api.com/json.
+
 2. Passed the country code of the client IP using this endpoint `https://restcountries.eu/rest/v2/alpha/{code}` to get all the information of the Country.
+
 3. Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
 
  
