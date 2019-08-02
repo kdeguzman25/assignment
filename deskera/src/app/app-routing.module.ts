@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ContainerComponent } from './container/container.component';
 
 const routes: Routes = [];
 
@@ -9,10 +10,16 @@ const routes: Routes = [];
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
+/*
+  Main OSP Routes
+*/
 export const MainRoutes: Routes = [
   
   // Fixed URL
-  { path: 'country', component: AppComponent } 
-  
+  { path: 'country', component: ContainerComponent }
+
 ];
+
+
+
+
