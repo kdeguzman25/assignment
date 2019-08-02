@@ -15,9 +15,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-`ng serve --open --host your_ip_here` # compiles and run the solution on your localhost using your ip
-`ng build --prod` # complies production scripts and files to dist folder
-`ng build --prod --base-href '/your_directory/'` #complies production scripts and files to dist folder so you can upload it to a custom directory
+Run `ng serve --open --host your_ip_here` # compiles and run the solution on your localhost using your ip
+Run `ng build --prod` # complies production scripts and files to dist folder
+Run `ng build --prod --base-href '/your_directory/'` #complies production scripts and files to dist folder so you can upload it to a custom directory
 
 The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
 
