@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';  
+import { WpAuthService } from "../app/shared/services/wp-auth.service";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'deskera'; 
-
-   
 }

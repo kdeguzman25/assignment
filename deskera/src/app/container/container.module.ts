@@ -9,7 +9,9 @@ import { TestimonialSectionComponent } from '../testimonial-section/testimonial-
 import { FooterSectionComponent } from '../footer-section/footer-section.component';
 import { SharedComponent } from '../shared/shared.component';
 import { CountriesService } from "../shared/services/countries.service";
-import { ContainerComponent } from '../container/container.component'; 
+import { ContainerComponent } from '../container/container.component';  
+import { AuthenticationComponent } from '../authentication/authentication.component';
+import { WpAuthService } from "../shared/services/wp-auth.service";
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { ContainerComponent } from '../container/container.component';
     TestimonialSectionComponent,
     FooterSectionComponent,
     SharedComponent,
-    ContainerComponent
+    ContainerComponent,
+    AuthenticationComponent
   ],
   providers: [
-    CountriesService
+    CountriesService,
+    WpAuthService
   ],
   imports: [
     CommonModule,
