@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class ContainerComponent implements OnInit {
 
 
-  token = null;
+  token = null; 
 
   constructor() { }
 
   ngOnInit() {
   }
+
+   
 
 }

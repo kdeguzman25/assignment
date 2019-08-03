@@ -56,6 +56,14 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Message</label>
+                    <textarea type="testimony" formControlName="testimony" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.testimony.errors }"></textarea>
+                    <div *ngIf="submitted && f.testimony.errors" class="invalid-feedback">
+                        <div *ngIf="f.testimony.errors.required">Testimony is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <input type="hidden" formControlName="bearerToken" value="{{token}}" [(ngModel)]='token'>
                   <button class="btn btn-success float-right">Submit</button>
                 </div>
               </form>

@@ -453,8 +453,8 @@ h1, h2, h3, h4, h5, h6 {
       top: 0;
       background: rgba(0, 0, 0, 0.4); }
   .site-blocks-cover, .site-blocks-cover .row {
-    min-height: 600px;
-    height: calc(80vh); }
+    min-height: 700px;
+    height: calc(100vh); }
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page .row {
     min-height: 600px;
     height: calc(80vh); }
@@ -1144,6 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
             color:#fff;
             font-weight: 200;
         }
+        textarea,
         input {
             color:#fff;
             background: transparent;

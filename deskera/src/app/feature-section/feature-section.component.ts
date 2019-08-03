@@ -1,6 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'; 
 import { CountriesService } from "../shared/services/countries.service";
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'; 
+import { WpAuthService } from '../shared/services/wp-auth.service';
+import { WP_USER, WP_PASS } from "../shared/constant/credential.contants";
+import { WpApiPosts } from 'wp-api-angular';
+import { Headers } from '@angular/http';
 
 @Component({
   selector: 'app-feature-section',
@@ -17,17 +21,36 @@ export class FeatureSectionComponent implements OnInit {
   defaultCallingCode = false;
   namePattern = '^[a-zA-Z0-9 ]+$';
   phonePattern = '^[0-9]+$';
+  username = WP_USER;
+  password = WP_PASS;
+  token
+  postData = {}
 
   constructor(
     private countries: CountriesService,
     private formBuilder: FormBuilder,
+    private wpAuth: WpAuthService,
+    private wpApiPosts: WpApiPosts 
   ) { }
 
   ngOnInit() { 
+
+      // Initialized WP Token Auth 
+      this.auth()
       // call country
       this.initializeDetectCountry()
       // Initialized reactive form
       this.contactForm = this.formBuilder.group({
+        testimony: ['', 
+            [
+              Validators.required 
+            ]
+          ],
+          bearerToken: ['', 
+            [
+              Validators.required 
+            ]
+          ],
           organization: ['', 
             [
               Validators.required,
@@ -68,16 +91,52 @@ export class FeatureSectionComponent implements OnInit {
       });
     });
   } 
+   /* 
+    Initialized the authentication
+  */
+ auth() { 
+  this.wpAuth.submitAuth(this.username, this.password).subscribe(res => { 
+    if (res['token']) {
+      this.token = res['token']; 
+    }
+  });
+
+}
   // Submit form
   onSubmit() {
-    this.submitted = true;
+    this.submitted = true;  
 
     // stop here if form is invalid
     if (this.contactForm.invalid) {
         return;
     } else {
-      alert("Form Submitted: " + JSON.stringify(this.contactForm.value)); 
-      console.log(this.contactForm.value)
+       
+      // Set authorization header
+      let headers: Headers = new Headers({
+        'Authorization': 'Bearer ' + this.contactForm.value['bearerToken']
+      });
+
+      // prepare post data
+      this.postData = { 
+        "title": this.contactForm.value['organization'],
+        "content": this.contactForm.value['testimony'],
+        "fields": {
+          "name": this.contactForm.value['name'],
+          "email_address": this.contactForm.value['email'],
+          "phone_number": this.contactForm.value['countryCode']+this.contactForm.value['phone'],
+          "profile_picture": 'http://localhost:4200/assets/images/person_3.jpg',
+        },
+        "status": 'publish',
+      } 
+      // Submit Post DAta
+      this.wpApiPosts.create(this.postData, { headers: headers })
+      .toPromise()
+      .then( response => {
+        console.log(response)
+        console.log(this.postData)
+        alert("Form Submitted: " + JSON.stringify(this.postData))
+        // window.location.reload();        
+      }) 
     }
 
   }
