@@ -16,7 +16,7 @@ Once the installation done. Login to wp-admin.
 Username: admin
 Password: admin123!
 
-Re-save the permalink and add the following lines of code to the .htaccess file.
+Re-save the permalink and add the following lines of code to the .htaccess file if not yet there.
 
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 
