@@ -135,7 +135,7 @@ export class FeatureSectionComponent implements OnInit {
         console.log(response)
         console.log(this.postData)
         alert("Form Submitted: " + JSON.stringify(this.postData))
-        // window.location.reload();        
+        window.location.reload();        
       }) 
     }
 
