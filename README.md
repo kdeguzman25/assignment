@@ -60,7 +60,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 3. Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
 
-4. Once the form submitted, it will a `Post` in Wordpress wp-admin and the will automaticall reload.
+4. Once the form submitted, it will be save as `Post` in Wordpress wp-admin and the will automatically reload.
 
 5. All `Post` will be display as `Testimonials` at the bottom part of the page.
 
