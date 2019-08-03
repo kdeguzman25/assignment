@@ -119,7 +119,7 @@ export class FeatureSectionComponent implements OnInit {
       // prepare post data
       this.postData = { 
         "title": this.contactForm.value['organization'],
-        "content": this.contactForm.value['testimony'],
+        "content": '"'+this.contactForm.value['testimony']+'"',
         "fields": {
           "name": this.contactForm.value['name'],
           "email_address": this.contactForm.value['email'],
@@ -132,9 +132,8 @@ export class FeatureSectionComponent implements OnInit {
       this.wpApiPosts.create(this.postData, { headers: headers })
       .toPromise()
       .then( response => {
-        console.log(response)
-        console.log(this.postData)
-        alert("Form Submitted: " + JSON.stringify(this.postData))
+        console.log(response) 
+        alert("Success")
         window.location.reload();        
       }) 
     }

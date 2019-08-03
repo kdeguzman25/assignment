@@ -11,6 +11,7 @@ import { SharedComponent } from '../shared/shared.component';
 import { CountriesService } from "../shared/services/countries.service";
 import { ContainerComponent } from '../container/container.component';   
 import { WpAuthService } from "../shared/services/wp-auth.service";
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WpAuthService } from "../shared/services/wp-auth.service";
     CommonModule,
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OwlModule
   ],
   exports: [
     ContainerComponent
