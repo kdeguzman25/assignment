@@ -8,6 +8,10 @@ Back-end: WordPress / WP Rest API
 
 UI Framework: Bootstrap 4
 
+WP Duplicator Files:  https://drive.google.com/drive/folders/1sbtucosZuXhvHmKvnexBqc5jenQFyKYx
+
+Download the duplicator file and run `installer.php` to into you localhost to deploy the WP API.
+
 
 ## Development server
 
