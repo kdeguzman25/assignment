@@ -10,6 +10,11 @@ UI Framework: Bootstrap 4
 
 WP Duplicator Files:  https://drive.google.com/drive/folders/1sbtucosZuXhvHmKvnexBqc5jenQFyKYx
 
+
+Front-end Dependencies: node_module
+
+Run `npm install` in the terminal.
+
 Download the duplicator file and run `installer.php` to into you localhost to deploy the WP API.
 
 Once the installation done. Login to wp-admin.
