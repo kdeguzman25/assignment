@@ -19,6 +19,7 @@ Password: admin123!
 Re-save the permalink and add the following lines of code to the .htaccess file.
 
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 
 
