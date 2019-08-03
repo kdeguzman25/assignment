@@ -1,6 +1,10 @@
 # Deskera
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+This project was build in Angular 7 + Wordpress Rest API.
+
+Front-end: Angular 7
+
+Back-end: WordPress / WP Rest API
 
 UI Framework: Bootstrap 4
 
@@ -41,5 +45,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Passed the country code of the client IP using this endpoint `https://restcountries.eu/rest/v2/alpha/{code}` to get all the information of the Country.
 
 3. Get all of the countries's calling code based from the client's country region using this endpoint `https://restcountries.eu/rest/v2/region/{region}` and bind the result to the form phone number field.
+
+4. Once the form submitted, it will a `Post` in Wordpress wp-admin and the will automaticall reload.
+
+5. All `Post` will be display as `Testimonials` at the bottom part of the page.
 
  
