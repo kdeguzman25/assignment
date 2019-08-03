@@ -12,6 +12,15 @@ WP Duplicator Files:  https://drive.google.com/drive/folders/1sbtucosZuXhvHmKvne
 
 Download the duplicator file and run `installer.php` to into you localhost to deploy the WP API.
 
+Once the installation done. Login to wp-admin.
+Username: admin
+Password: admin123!
+
+Re-save the permalink and add the following lines of code to the .htaccess file.
+
+RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
 
 ## Development server
 
