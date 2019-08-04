@@ -15,7 +15,7 @@ Front-end Dependencies: node_module
 
 Run `npm install` in the terminal.
 
-Download the duplicator file and run `installer.php` to into you localhost to deploy the WP API.
+Download the duplicator file and run `installer.php` to into you localhost wp-api folder to deploy the WP API.
 
 Once the installation done. Login to wp-admin.
 Username: admin
